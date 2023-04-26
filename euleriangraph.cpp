@@ -33,6 +33,7 @@ void DFS(int curr, vector<bool>& visited){
 bool connected_graph(){
     vector<bool> visited(V+1, false);
     int node = -1; //node that starts DFS
+    
     //looking for a node with degree greater than zero
     for(int i = 0; i < V; i++){
         if(adj[i].size() > 0){
@@ -61,7 +62,7 @@ int find_euler(){
         }
     }
     if(odd > 2) return 0; //only start and end node can have odd degree
-    return odd == 0 ? 2 : 1; //2 -> eulerian, 1 -> semi-eulerian (2 odd-degree vertices)
+    return odd == 0 ? 2 : 1;
 
 } 
 void findEuler_Path_Cycle(){
